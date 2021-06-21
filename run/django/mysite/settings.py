@@ -22,7 +22,6 @@ from google.cloud import secretmanager
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # [START cloudrun_django_secretconfig]
-# [START cloudrun_django_secret_config]
 env = environ.Env(DEBUG=(bool, False))
 env_file = os.path.join(BASE_DIR, ".env")
 
@@ -60,7 +59,6 @@ elif os.environ.get("GOOGLE_CLOUD_PROJECT", None):
 else:
     raise Exception("No local .env or GOOGLE_CLOUD_PROJECT detected. No secrets found.")
 # [END cloudrun_django_secret_config]
-# [END cloudrun_django_secretconfig]
 SECRET_KEY = env("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
